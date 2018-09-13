@@ -12,3 +12,14 @@ function addItem(){
     testList.push([testList.length + 1, item]);
   }
 }
+
+document.getElementById('singleToDoItem').onkeypress = e => {
+  if (!e) {
+    e = window.event;
+  }
+  const keyCode = e.keyCode || e.which;
+  if (keyCode == '13'){
+    addItem();
+    return false;
+  }
+}
