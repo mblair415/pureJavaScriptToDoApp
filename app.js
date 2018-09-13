@@ -1,4 +1,5 @@
 let testList = [];
+console.log('heroku test');
 
 function addItem(){
   const counter = testList.length + 1;
