@@ -1,6 +1,8 @@
 let testList = [];
 
 function addItem(){
+  const counter = testList.length + 1;
+
   if (document.getElementById("singleToDoItem").value != ""){
     const item = document.getElementById("singleToDoItem").value;
     const text = document.createTextNode(item);
@@ -9,7 +11,11 @@ function addItem(){
     document.getElementById("toDoList").appendChild(newItem);
     document.getElementById("singleToDoItem").value = "";
 
-    testList.push([testList.length + 1, item]);
+    if (counter % 3 == 0) {
+      newItem.className = "redText";
+    }
+
+    testList.push([counter, item]);
   }
 }
 
